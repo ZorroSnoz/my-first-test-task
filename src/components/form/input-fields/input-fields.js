@@ -11,3 +11,14 @@ export let Input = ({ input, meta, ...props }) => {
         </div>
     )
 };
+
+export let RadioGroup = ({ input, meta, options }) => {
+        const hasError = meta.touched && meta.error;
+        console.log(input.value);
+        return (
+            <div className='genderBox'>
+                    {options.map(o =><label className={(hasError ? 'errorInput' : '') + (o.value === input.value ? ' labelRadio' : '')} key={o.value}><input type='radio' {...input} checked={o.value === input.value} value={o.value}  /> {o.title}</label>)}      
+                    {hasError && <span className="errorSpan">{meta.error}</span>}
+            </div>
+        );
+    }
