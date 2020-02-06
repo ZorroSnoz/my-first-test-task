@@ -47,6 +47,23 @@ input[type="text"]:focus {
   width: 300px;
   border-color: #81c784;
 }
+.inputField {
+  position: relative;
+}
+.errorInput {
+  border-color: #e64646 !important;
+}
+.errorSpan {
+  color: white;
+  position: absolute;
+  left: 10px;
+  top: -18px;
+  display: block;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: #e64646;
+  white-space: nowrap;
+}
 button {
   background-color: #212121;
   padding: 17px 40px;
@@ -99,8 +116,28 @@ table td {
 .headerTable {
   background-color: #3B3B3B;
 }
+.headerTable p {
+  margin: 0px;
+}
+.headerTable div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
 .tableItem {
   text-align: center;
+}
+.tableItem tr {
+  height: 35px;
+}
+.tableItem div {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 5px 0px;
 }
 .tableItem img {
   height: 25px;

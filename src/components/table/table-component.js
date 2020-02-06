@@ -1,22 +1,23 @@
 import React from 'react';
-import male from '../../images/male.png';
-import female from '../../images/female.png';
 import TableItem from './table-item-component/table-item-component';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
-let TableComponent = (props) => {
+
+let TableComponent = ({itemsData, sortAge, sortGender, sortPhone, sortLastName, sortFirstName, deleteItem}) => {
+
+    let tableItems = itemsData.map( item => <TableItem itemData={item} deleteItem={deleteItem}/>);
+
     return (
         <div>
             <table>
                 <tr className='headerTable'>
-                    <td>Ім'я:</td>
-                    <td>Прізвище:</td>
-                    <td>Телефон:</td>
-                    <td>Стать:</td>
-                    <td>Вік:</td>
+                    <td><div onClick={sortFirstName}><ArrowDropDownIcon/><p>Ім'я:</p></div></td>
+                    <td><div onClick={sortLastName}><ArrowDropDownIcon/><p>Прізвище:</p></div></td>
+                    <td><div onClick={sortPhone}><ArrowDropDownIcon/><p>Телефон:</p></div></td>
+                    <td><div onClick={sortGender}><ArrowDropDownIcon/><p>Стать:</p></div></td>
+                    <td><div onClick={sortAge} ><ArrowDropDownIcon/><p>Вік:</p></div></td>
                 </tr>
-<TableItem />
-<TableItem />
-<TableItem />
+                {tableItems}
             </table>
         </div>
     )
